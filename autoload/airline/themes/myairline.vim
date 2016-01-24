@@ -4,7 +4,7 @@ function! airline#themes#myairline#refresh()
   """"""""""""""""""""""""""""""""""""""""""""""""
   " Options
   """"""""""""""""""""""""""""""""""""""""""""""""
-  let s:background  = get(g:, 'airline_myairline_bg', &background)
+  let s:background  = get(g:, 'airline_myairline_bg', 'dark')
   let s:ansi_colors = get(g:, 'solarized_termcolors', 16) != 256 && &t_Co >= 16 ? 1 : 0
   let s:tty         = &t_Co == 8
 
@@ -171,6 +171,3 @@ function! airline#themes#myairline#refresh()
   let g:airline#themes#myairline#palette.tabline.airline_tabtype = [
         \ s:N2[0].g, s:N2[1].g, s:N2[0].t, s:N2[1].t, s:N2[2]]
 endfunction
-
-call airline#themes#myairline#refresh()
-
