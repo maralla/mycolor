@@ -17,13 +17,22 @@ let s:green = [ '#87af87', 108 ]
 let s:white = [ '#d0d0d0', 252 ]
 
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
-let s:p.normal.left = [ [ s:base02, s:blue ], [ s:base3, s:base01 ] ]
+
+let s:inactive = [
+      \  [s:base01, s:base02],
+      \  [s:base01, s:base02],
+      \ ]
+
+let s:p.normal.left = [ [ s:base02, s:blue , 'bold'], [ s:base3, s:base01 ] ]
+let s:p.insert.left = [ [ s:base02, s:green, 'bold'], [ s:base3, s:base01 ] ]
+let s:p.visual.left = [ [ s:base02, s:peach, 'bold'], [ s:base3, s:base01 ] ]
+let s:p.replace.left = [ [ s:base02, s:magenta, 'bold' ], [ s:base3, s:base01 ] ]
+
 let s:p.normal.right = [ [ s:red, s:base02 ], [ s:base2, s:base01 ] ]
-let s:p.inactive.right = [ [ s:base02, s:base00 ], [ s:base0, s:base02 ] ]
-let s:p.inactive.left =  [ [ s:base0, s:base02 ], [ s:base00, s:base02 ] ]
-let s:p.insert.left = [ [ s:base02, s:green ], [ s:base3, s:base01 ] ]
-let s:p.replace.left = [ [ s:base02, s:magenta ], [ s:base3, s:base01 ] ]
-let s:p.visual.left = [ [ s:base02, s:peach ], [ s:base3, s:base01 ] ]
+
+let s:p.inactive.left = copy(s:inactive)
+let s:p.inactive.right = copy(s:inactive)
+
 let s:p.normal.middle = [ [ s:base0, s:base02 ] ]
 let s:p.inactive.middle = [ [ s:base00, s:base02 ] ]
 let s:p.tabline.left = [ [ s:base3, s:base00 ] ]
