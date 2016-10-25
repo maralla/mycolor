@@ -16,11 +16,14 @@ let s:cyan = [ '#87d7d7', 23 ]
 let s:green = [ '#87af87', 108 ]
 let s:white = [ '#d0d0d0', 252 ]
 
+let s:inactive_bg = ['#151513', 235]
+let s:inactive_fg = ['#151513', 239]
+
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
 let s:inactive = [
-      \  [s:base01, s:base02],
-      \  [s:base01, s:base02],
+      \  [s:inactive_fg, s:inactive_bg],
+      \  [s:inactive_fg, s:inactive_bg],
       \ ]
 
 let s:p.normal.left = [ [ s:base02, s:blue , 'bold'], [ s:base3, s:base01 ] ]
@@ -34,7 +37,7 @@ let s:p.inactive.left = copy(s:inactive)
 let s:p.inactive.right = copy(s:inactive)
 
 let s:p.normal.middle = [ [ s:base0, s:base02 ] ]
-let s:p.inactive.middle = [ [ s:base00, s:base02 ] ]
+let s:p.inactive.middle = [ [ s:base00, s:inactive_bg ] ]
 let s:p.tabline.left = [ [ s:base3, s:base00 ] ]
 let s:p.tabline.tabsel = [ [ s:base3, s:base02 ] ]
 let s:p.tabline.middle = [ [ s:base01, s:base1 ] ]
