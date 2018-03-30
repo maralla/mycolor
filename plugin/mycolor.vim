@@ -1,1 +1,1 @@
-hi Normal guifg=red
+hi Normal guifg=green
